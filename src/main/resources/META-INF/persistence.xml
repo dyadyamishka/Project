@@ -1,0 +1,19 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+    <persistence-unit name="habitPU">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>org.example.entity.Habit</class> <!-- Укажите полный путь к классу Habit -->
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/habit_tracker"/> <!-- Имя вашей базы данных -->
+            <property name="javax.persistence.jdbc.user" value="your_username"/> <!-- Ваше имя пользователя PostgreSQL -->
+            <property name="javax.persistence.jdbc.password" value="your_password"/> <!-- Ваш пароль PostgreSQL -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/> <!-- Используйте "update" для автоматического создания таблиц -->
+            <property name="hibernate.show_sql" value="true"/> <!-- Для отображения SQL-запросов в консоли -->
+        </properties>
+    </persistence-unit>
+</persistence>
